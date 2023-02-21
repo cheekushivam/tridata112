@@ -1,0 +1,25 @@
+apiVersion: cpd.ibm.com/v1
+kind: Ibmcpd
+metadata:
+  name: ibmcpd-cr
+  namespace: ibm-cpd
+  csNamespace: ibm-common-services
+spec:
+  license:
+    accept: true
+    license: Standard
+  storageClass: "${FILE_STORAGE}"
+  zenCoreMetadbStorageClass: "${BLOCK_STORAGE}"
+  ZenCoreMetaDb:
+    container: zen-metastoredb
+    kind: StatefulSet
+    name: zen-metastoredb
+    replicas: 3
+    resources:
+      limits:
+        cpu: 2
+        memory: 4Gi
+      requests:
+        cpu: 200m
+        memory: 1024Mi
+  scaleConfig: medium

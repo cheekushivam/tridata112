@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Secret
+type: Opaque
+metadata:
+  name: sls-bootstrap
+  namespace: ibm-sls
+stringData:
+  licensingId: "10005a6bab7a"
+  licensingKey: |
+    SERVER sls.ibm-sls.svc 10005a6bab7a 27000
+    VENDOR ibmratl
+    VENDOR telelogic
+    VENDOR rational
+
+    INCREMENT AppPoints_TAS ibmratl 1.0 15-jan-2023 100 \

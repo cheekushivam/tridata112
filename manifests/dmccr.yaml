@@ -1,0 +1,10 @@
+apiVersion: dmc.databases.ibm.com/v1
+kind: Dmcaddon
+metadata:
+  name: dmc-addon
+  namespace: ibm-cpd
+spec:
+  license:
+    accept: true
+    license: Standard
+  version: 4.0.8

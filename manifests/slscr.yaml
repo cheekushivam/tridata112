@@ -1,0 +1,27 @@
+---
+apiVersion: sls.ibm.com/v1
+kind: LicenseService
+metadata:
+  name: sls
+  namespace: ibm-sls
+spec:
+  settings:
+    auth:
+      enforce: true
+    compliance:
+      enforce: true
+    registration:
+      open: true
+  license:
+    accept: true
+  mongo:
+    configDb: admin
+    nodes:
+      - host: my-mongodb-0.my-mongodb-svc.mongodb.svc.cluster.local
+        port: 27017
+      - host: my-mongodb-1.my-mongodb-svc.mongodb.svc.cluster.local
+        port: 27017
+      - host: my-mongodb-2.my-mongodb-svc.mongodb.svc.cluster.local
+        port: 27017
+    retryWrites: true
+    secretName: sls-mongo-credentials
